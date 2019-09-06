@@ -1,7 +1,9 @@
 ﻿using FluentAssertions;
+
 using IpData.Http.Serializer;
 using IpData.Models;
 using IpData.Tests.DataSources;
+
 using Xunit;
 
 namespace IpData.Tests.Http.Serializer
@@ -20,6 +22,7 @@ namespace IpData.Tests.Http.Serializer
 
             // Assert
             actual.Should().NotBeNull();
+            actual.Asn.Should().BeEquivalentTo("AS8359");
         }
 
         [Theory]

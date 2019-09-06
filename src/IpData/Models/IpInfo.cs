@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
+
 using IpData.Helpers.Extensions;
+
 using Newtonsoft.Json;
 
 namespace IpData.Models
@@ -43,7 +45,10 @@ namespace IpData.Models
         public double? Longitude { get; set; }
 
         [JsonProperty("asn", NullValueHandling = NullValueHandling.Ignore)]
-        public string Asn { get; set; }
+        public AsnObject AsnObject { get; set; }
+
+        [JsonIgnore]
+        public string Asn => AsnObject.Asn;
 
         [JsonProperty("organisation", NullValueHandling = NullValueHandling.Ignore)]
         public string Organisation { get; set; }
