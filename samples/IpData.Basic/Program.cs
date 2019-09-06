@@ -13,6 +13,7 @@ namespace IpData.Basic
             // Get ip data from my ip
             var myIpInfo = await client.Lookup();
             Console.WriteLine($"Country name for {myIpInfo.Ip} is {myIpInfo.CountryName}");
+            Console.WriteLine($"ASN for {myIpInfo.Ip} is {myIpInfo.Asn}");
 
             // Get localized ip data from my ip
             var myIpInfoLocalized = await client.Lookup(CultureInfo.GetCultureInfo("zh-CN"));
